@@ -1,0 +1,43 @@
+
+.contenedor{
+  border: 1px solid;
+  width: 500px;
+  height: 600px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+
+.boton{
+  margin: 20px 0;
+  border: solid 1px;
+  width: 40%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.boton:focus{
+  background-image: radial-gradient(circle at 0 0, #3023ae, #c96dd8);
+  color: white;
+  text-decoration: none;
+}
+
+.boton:hover{
+  background-color: purple;
+  color: white;
+  text-decoration: none;
+}
+
+
+h3{
+  font-size: 38px;
+}
+
+span{
+  font-size: 24px;
+}
