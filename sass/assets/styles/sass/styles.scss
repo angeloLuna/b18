@@ -1,0 +1,17 @@
+$c-blue: #0000ff;
+
+.papa{
+  border: solid 1px red;
+  background: red; 
+  color: green;
+}
+
+.nieto{
+  @extend .papa;
+  border: 2px solid blue;
+}
+
+
+tplinkf494
+
+82106959

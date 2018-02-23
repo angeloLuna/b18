@@ -11,3 +11,9 @@
 .logo-spotify{
   width: 100px;
 }
+
+@media screen and (max-width: 600px){
+  *{
+    background-color: red;
+  }
+}

@@ -1,0 +1,7 @@
+.papa, .nieto {
+  border: solid 1px red;
+  background: red;
+  color: green; }
+
+.nieto {
+  border: 2px solid blue; }
