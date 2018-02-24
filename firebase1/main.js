@@ -1,5 +1,7 @@
 var btnInitSesion = document.getElementById("iniciar-sesion");
 var btnCloseSesion = document.getElementById("cerrar-sesion");
+var usuario = {}
+var ref = "usuarios"
 
 
 // Funcion del boton de iniciar sesion
@@ -26,24 +28,46 @@ btnCloseSesion.addEventListener('click', function(){
 
 })
 
+
+
 function initApp(){
   firebase.auth().onAuthStateChanged(function(user){
     if(user) {
-      console.log("hay usuario");
-      var usuario = {
+      // console.log(user);
+      usuario = {
         nombre: user.displayName,
         email: user.email,
-        uid: user.uid
+        uid: user.uid,
+        img: user.photoURL
       };
       console.log(usuario)
       btnInitSesion.style.display = 'none';
-      btnCloseSesion.style.display = "inline-block"
+      btnCloseSesion.style.display = "inline-block";
+      pushUser()
     }else{
       console.log("no hay usuario");
       btnInitSesion.style.display = 'inline-block';
-      btnCloseSesion.style.display = "none"
+      btnCloseSesion.style.display = "none";
     }
   })
+}
+
+function show(){
+  firebase.database().ref(ref).on('value', function(data){
+
+    console.log(data.val())
+
+  })
+}
+
+
+function pushUser(){
+  console.log("push")
+  firebase.database().ref(ref +"/"+ usuario.uid).set(usuario)
+  .catch(function(error){
+    console.log(error)
+  })
+
 }
 
 
